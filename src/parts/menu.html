@@ -1,0 +1,21 @@
+<md-sidenav
+        class="md-sidenav-left sidenav md-whiteframe-2dp"
+        md-component-id="left"
+        flex>
+    <md-list>
+        <md-list-item md-ink-ripple ng-repeat="item in main.menu" ui-sref-active='active-menu-link'>
+            <div    class="menu-item"
+                    layout="row"
+                    layout-align="start center"
+                    ui-sref="{{item.link}}"
+                    ng-click="main.toggleSidenav('left')"
+                    flex>
+                <div class="inset">
+                    <md-icon md-font-icon="material-icons">{{item.icon}}</md-icon>
+                </div>
+                <div class="inset">{{item.title}}</div>
+                <md-divider></md-divider>
+            </div>
+        </md-list-item>
+    </md-list>
+</md-sidenav>

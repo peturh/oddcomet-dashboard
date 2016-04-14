@@ -1,0 +1,192 @@
+input.search {
+  height: 70px;
+  font-size: 24px;
+  text-transform: uppercase;
+  border: 2px solid #dddddd;
+  border-radius: 2px;
+}
+
+input.search::-ms-clear {
+  display: none;
+}
+
+button.search {
+  width: 70px;
+  height: 70px;
+  background: #27ae60;
+}
+
+.refresh {
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 0.8;
+  color: white;
+}
+
+.refresh:after {
+  content: "↻";
+}
+
+.refresh:active:after {
+  content: "↺";
+}
+
+.refresh:focus:after {
+  content: "↺";
+}
+
+button.search:hover {
+  background: #2ecc71;
+}
+
+button.search:focus {
+  background: #27ae60;
+}
+
+button.search:active {
+  background: #27ae60 !important;
+}
+
+img.refresh {
+  width: 40px;
+}
+
+div.search-group {
+  margin-bottom: 10px;
+}
+
+.big-box {
+  margin-top: 10px;
+  border-radius: 1px !important;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.logo {
+  width: 260px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.powered {
+  width: 100px;
+}
+
+#main {
+  display: none;
+}
+
+.valid {
+  font-size: 24px !important;
+  line-height: 2.7 !important;
+  border-radius: 3px !important;
+}
+
+.remove-filter-string {
+  position: absolute;
+  right: 20px;
+  z-index: 100;
+  font-size: 50px;
+  color: rgba(82, 82, 82, 0.75);
+  cursor: pointer;
+}
+
+.smaller-padding {
+  padding: 0 15px !important;
+}
+
+.panel {
+  border: 2px solid #DDDDDD !important;
+}
+
+.description-label {
+  width: 60px;
+}
+
+.label {
+  padding: 5px 13px !important;
+}
+
+.info-label {
+  color: rgba(0, 0, 0, 0.61) !important;
+}
+
+.registration-number {
+  font-family: Mittelschrift, sans-serif;
+}
+
+.reg-plate {
+  display: inline;
+  padding: 3px 10px;
+  margin-top: 20px !important;
+  background: rgba(223, 223, 223, 0.48);
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.div-around-reg-plate {
+  margin-top: 20px !important;
+}
+
+.reg-nbr-input {
+  height: 55px !important;
+  font-size: 30px !important;
+}
+
+.arrow-up-arrow {
+  width: 60px;
+  height: 60px;
+  margin: 30px -6px 0 0;
+  font-size: 30px;
+  color: white;
+  background: #3498db;
+  border: none !important;
+  -webkit-border-radius: 30px;
+     -moz-border-radius: 30px;
+          border-radius: 30px;
+  -webkit-box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.81);
+     -moz-box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.81);
+          box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.81);
+}
+
+/*
+.arrow-up-arrow:after{
+  content : '❮';
+}
+*/
+
+.chevron {
+  width: 30px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+}
+
+.arrow-up {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+.load-more-btn {
+  background: #3498db !important;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+h1,
+h2,
+h4,
+h5 {
+  margin-bottom: 1px !important;
+  font-family: Montserrat, sans-serif;
+}
+
+@font-face {
+  font-family: "Mittelschrift";
+}

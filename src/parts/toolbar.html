@@ -1,0 +1,12 @@
+<md-progress-linear class="sm-progress-bar" md-mode="indeterminate" ng-if="main.progressLoading"></md-progress-linear>
+<div layout="column" class="fixed-toolbar">
+    <md-toolbar id="toolbar" class="" layout="row">
+        <div class="md-toolbar-tools">
+            <md-button menu-button class="menu-btn" ng-click="main.toggleSidenav('left')">
+                <md-icon md-font-icon="material-icons inherit">menu</md-icon>
+            </md-button>
+            <h2>{{$state.current.location}}</h2>
+        </div>
+
+    </md-toolbar>
+</div>
