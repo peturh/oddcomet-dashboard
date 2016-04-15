@@ -1,3 +1,58 @@
-<div flex-xs flex-gt-xs="50" layout="column">
+<div flex layout="row" layout-align="center top" ng-init="email.init()">
+
+    <md-card flex="70">
+        <md-toolbar class="layout-padding">
+            <div class="md-toolbar-tools">
+                <md-icon md-font-icon="material-icons">email</md-icon>
+                <h2 class="layout-padding"><span>Email registered users</span></h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+
+            <text-angular ng-model="email.message"></text-angular>
+
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-accent">Send email</md-button>
+        </md-card-actions>
+    </md-card>
+
+    <md-card flex="30">
+        <md-toolbar class="layout-padding">
+            <div class="md-toolbar-tools">
+                <md-icon md-font-icon="material-icons">accessibility</md-icon>
+                <h2 class="layout-padding"><span>Users</span></h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <md-input-container>
+                <label>Search user</label>
+                <input name="searchUser" ng-model="email.searchText">
+            </md-input-container>
+
+                <md-list>
+                    <md-list-item class="md-2-line">
+                        <md-checkbox aria-label="select email" ng-click="email.checkAll()"
+                                     ng-model="email.checked"></md-checkbox>
+                        <div class="md-list-item-text">
+                            <span>Select all</span>
+                        </div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <md-content class="email-list" flex>
+
+                    <md-list-item class="md-2-line" ng-repeat="user in email.users | filter : email.searchText">
+                        <md-checkbox aria-label="select email" ng-model="user.checked"></md-checkbox>
+                        <div class="md-list-item-text">
+                            <span>{{user.email}}</span>
+                        </div>
+                    </md-list-item>
+                    </md-content>
+
+                </md-list>
+        </md-card-content>
+    </md-card>
 
 </div>

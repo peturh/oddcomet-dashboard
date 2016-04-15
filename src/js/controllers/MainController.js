@@ -1,7 +1,7 @@
 var app = require('app');
 
-app.controller('MainController', ['$scope', '$state', '$mdSidenav', 'MailService',
-    function ($scope, $state, $mdSidenav, MailService) {
+app.controller('MainController', ['$scope', '$state', '$mdSidenav',
+    function ($scope, $state, $mdSidenav) {
         var main = this;
 
         main.menu = [
@@ -25,19 +25,6 @@ app.controller('MainController', ['$scope', '$state', '$mdSidenav', 'MailService
 
         var emails = [];
         main.init = function () {
-
-            var userQuery = new Parse.Query(Parse.User);
-            userQuery.find({
-                success: function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        emails.push(data[i].get('email'));
-                    }
-
-                },
-                error: function (users, error) {
-                    console.log(error);
-                }
-            });
 
         };
 

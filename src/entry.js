@@ -11,6 +11,8 @@ var ngUIRouter = require('angular-ui-router');
 //app
 var app = require('app');
 
+var parseAngular = require('vendors/angular-parse-patch.js');
+
 window.taTools = {};
 window.rangy = require('rangy/lib/rangy-core');
 require('rangy/lib/rangy-selectionsaverestore');
@@ -31,7 +33,7 @@ var NewsController = require('controllers/NewsController');
 // Directives
 
 //Services
-var MailService = require('services/MailService');
+var MailService = require('services/EmailService');
 // Templates
 var HomeTemplate = require('home.html');
 var MenuTemplate = require('menu.html');

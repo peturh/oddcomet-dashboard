@@ -1,6 +1,6 @@
 var app = require('app');
 
-app.service('MailService', ['$http', function ($http) {
+app.service('EmailService', ['$http', function ($http) {
 
     var service = {};
 
