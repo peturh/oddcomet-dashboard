@@ -8,15 +8,15 @@ var ngAnimate = require('angular-animate');
 var ngMessages = require('angular-messages');
 var ngUIRouter = require('angular-ui-router');
 
+//app
+var app = require('app');
 
 window.taTools = {};
 window.rangy = require('rangy/lib/rangy-core');
 require('rangy/lib/rangy-selectionsaverestore');
 require('textangular/dist/textAngular-sanitize');
-require('textAngular/dist/textAngularSetup');
-require('textAngular/dist/textAngular');
-//app
-var app = require('app');
+require('textangular/dist/textAngularSetup');
+require('textangular/dist/textAngular');
 
 //Configs
 var routes = require('configs/routes');
