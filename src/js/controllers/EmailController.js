@@ -23,9 +23,19 @@ app.controller('EmailController', ['$scope', '$interval', '$timeout', 'EmailServ
         };
 
         email.sendEmail = function (message) {
+            var confirm = window.confirm('Are you sure you want to send emails to these users?');
+            if(confirm){
+                var emailsToSend = [];
+                for (var i = 0; i < email.users.length; i++){
+                    if(email.users[i].checked){
+                        emailsToSend.push(email.users[i].email);
+                    }
 
-
-
+                }
+                EmailService.sendEmailToUsers(message,emailsToSend).then(function(response){
+                    console.log(response);
+                })
+            }
         };
 
         email.triggerToSendCompleteEmail = function(){

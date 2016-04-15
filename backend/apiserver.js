@@ -3,6 +3,12 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const serveStatic = require('serve-static');
 
+
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport(process.env.CREDENTIALS);
+
+
 module.exports = (PORT) =>{
     const app = express();
 
@@ -16,8 +22,31 @@ module.exports = (PORT) =>{
             this.sendMail(emails[i], steamKeys[i]);
         }
     });
+
+    app.post('/sendEmailToUsers', function (req, res) {
+
+        console.log(req.body);
+       /* for (var i = 0; i < emails.length; i++) {
+            this.sendMail(emails[i], steamKeys[i]);
+        }*/
+    });
 };
 
+const sendMailToUser = (email, subject, message) => {
+    var mailOptions = {
+        from: '"Odd Comet Games" <information@oddcometgames.com>', // sender address
+        to: email, //email // list of receivers
+        subject: subject, // Subject line
+        html: message
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+    });
+};
 
 const sendMail = (email, key) => {
     var mailOptions = {
