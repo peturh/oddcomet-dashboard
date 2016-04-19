@@ -9,12 +9,15 @@
             </div>
         </md-toolbar>
         <md-card-content>
-
+            <md-input-container class="md-block">
+                <label>Subject</label>
+                <input name="subject" ng-model="email.subject">
+            </md-input-container>
             <text-angular ng-model="email.message"></text-angular>
 
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-accent">Send email</md-button>
+            <md-button ng-click="email.sendEmail(email.subject,email.message)" class="md-accent">Send email</md-button>
         </md-card-actions>
     </md-card>
 
@@ -27,7 +30,7 @@
             </div>
         </md-toolbar>
         <md-card-content>
-            <md-input-container>
+            <md-input-container class="md-block">
                 <label>Search user</label>
                 <input name="searchUser" ng-model="email.searchText">
             </md-input-container>

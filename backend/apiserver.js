@@ -11,9 +11,8 @@ var transporter = nodemailer.createTransport(process.env.CREDENTIALS);
 
 module.exports = (PORT) =>{
     const app = express();
-
+    console.log("HEJ",PORT);
     app.use(serveStatic(__dirname + "/src"));
-    app.listen(PORT);
 
     app.post('/sendmail', function (req, res) {
         var emails = ['jonathan.stahl@ecsolutionzs.se', 'petur.hjartarson@ecsolutions.se', 'oscar.lindahl@ecsolutions.se'] //req.body.emails;
@@ -22,10 +21,12 @@ module.exports = (PORT) =>{
             this.sendMail(emails[i], steamKeys[i]);
         }
     });
+    app.use(bodyParser.json());
+    app.listen(PORT);
 
     app.post('/sendEmailToUsers', function (req, res) {
 
-        console.log(req.body);
+        console.log("email",req.body);
        /* for (var i = 0; i < emails.length; i++) {
             this.sendMail(emails[i], steamKeys[i]);
         }*/

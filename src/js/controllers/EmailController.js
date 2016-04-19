@@ -4,17 +4,15 @@ app.controller('EmailController', ['$scope', '$interval', '$timeout', 'EmailServ
     function ($scope, $interval, $timeout, EmailService) {
         var email = this;
 
-        email.checked = true;
+        email.checked = false;
         email.users = [];
         email.init = function () {
             var userQuery = new Parse.Query(Parse.User);
             userQuery.find({
                 success: function (data) {
                     for (var i = 0; i < data.length; i++) {
-                        email.users.push({email : data[i].get('email'), checked : true});
+                        email.users.push({email : data[i].get('email'), checked :  email.checked});
                     }
-                    console.log(email.users);
-
                 },
                 error: function (users, error) {
                     console.log(error);
@@ -22,7 +20,7 @@ app.controller('EmailController', ['$scope', '$interval', '$timeout', 'EmailServ
             });
         };
 
-        email.sendEmail = function (message) {
+        email.sendEmail = function (subject,message) {
             var confirm = window.confirm('Are you sure you want to send emails to these users?');
             if(confirm){
                 var emailsToSend = [];
@@ -30,9 +28,9 @@ app.controller('EmailController', ['$scope', '$interval', '$timeout', 'EmailServ
                     if(email.users[i].checked){
                         emailsToSend.push(email.users[i].email);
                     }
-
                 }
-                EmailService.sendEmailToUsers(message,emailsToSend).then(function(response){
+                console.log("HEJ")
+                EmailService.sendEmailToUsers(subject, message,emailsToSend).then(function(response){
                     console.log(response);
                 })
             }
@@ -42,7 +40,6 @@ app.controller('EmailController', ['$scope', '$interval', '$timeout', 'EmailServ
 
         };
         email.checkAll = function(){
-
             for(var i = 0; i < email.users.length;i++){
                 email.users[i].checked = !email.checked;
             }
